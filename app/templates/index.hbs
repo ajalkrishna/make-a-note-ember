@@ -1,7 +1,7 @@
 <div class="container">
     <form class="form" {{on 'submit' this.makeNote}}>
         <div class="mb-3">
-            <Input @type="text" @value={{this.title}} id="title" placeholder="title here" class="form-control"/>
+            <Input @type="text" @value={{this.title}} id="title" placeholder="title here" class="form-control" />
         </div>
         <div class="mb-3">
             <Textarea @value={{this.note}} id="note" class="form-control" placeholder="scribble here"></Textarea>
@@ -10,7 +10,7 @@
             <button type="submit" class="btn btn-secondary">Make it!</button>
         </div>
     </form>
-    {{#each this.noteCollection as |note|}}
-        <NoteCard @note={{note}}/>
+    {{#each @model as |note index|}}
+    <NoteCard @note={{note}} @index={{index}}/>
     {{/each}}
 </div>

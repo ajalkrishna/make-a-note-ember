@@ -8,9 +8,9 @@ export default function (server) {
     year: 2020,
     rating: 4.4,
   });
-  server.create('note',{
-    title:"First Note",
-    note:"It was a wonderful day",
-    date:"10/16/2022"
-  })
+  server.create('note', {
+    title: 'Dummy Note',
+    note: 'It is a dummy note',
+    date: 'mm/dd/yyyy',
+  });
 }

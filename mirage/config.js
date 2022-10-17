@@ -24,4 +24,7 @@ export default function () {
 
   this.get('/movies');
   this.get('/notes');
+  this.post('/notes');
+  this.put('/notes/:id')
+  this.del('/notes/:id')
 }

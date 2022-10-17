@@ -18,9 +18,9 @@ export default class IndexController extends Controller {
       note: this.note,
       date: currentDay,
     };
-    this.application.addToCollection(madeNote);
-    this.noteCollection = this.application.getCollection();
-    let note= await this.store.createRecord('note',madeNote)
+    // this.application.addToCollection(madeNote);
+    // this.noteCollection = this.application.getCollection();
+    let note = await this.store.createRecord('note', madeNote);
     note.save();
   }
 }
