@@ -8,9 +8,7 @@ export default class NoteCardComponent extends Component {
     @action
     async delete(index){
         let response = await this.store.findRecord('note', index);
-        response.deleteRecord()
-        console.log(response.isDeleted);
-        response.save()
+        response.destroyRecord()
     }
     
     @action

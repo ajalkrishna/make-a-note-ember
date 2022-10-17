@@ -1,0 +1,34 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.index{
+    min-height: 100vh;
+    background-color: rgba(250, 235, 215, 0.79);
+}
+.index .form_section{
+    padding: 4rem 3rem;
+}
+.index .note_section{
+    padding: 4rem 3rem;
+}
+.form-control{
+    border-radius: 0;
+    box-shadow: none;
+}
+.btn{
+    border-radius: 0;
+}
+.form-control::placeholder{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.navbar{
+    background-color: rgb(253, 230, 201);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.card{
+    border-radius: 0;
+    /* width: 100%; */
+}
