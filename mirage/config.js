@@ -25,6 +25,6 @@ export default function () {
   this.get('/notes');
   this.get('/notes/:id');
   this.post('/notes');
-  this.put('/notes/:id')
-  this.del('/notes/:id')
+  this.put('/notes/:id');
+  this.del('/notes/:id');
 }
