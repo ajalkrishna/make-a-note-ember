@@ -1,4 +1,22 @@
 .login{
     background-color: beige;
-    height: 100vh;
+}
+.login label{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    /* margin-bottom: 1rem; */
+}
+.login .row{
+    height: calc(100vh - 56px);
+}
+.login .login_template{
+    background-color: white;
+    padding: 3rem 2rem;
+
+}
+.login .form-control{
+}
+.login .btn{
+    width: 100%;
+    border-radius: 0;
 }
