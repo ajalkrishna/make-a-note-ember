@@ -4,9 +4,12 @@ import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
 
 export default class NotesController extends Controller {
-  @tracked title;
   @service application;
   @service store;
+  @tracked updatedNote;
+  @tracked title;
+  @tracked note;
+
 
   @action
   async makeNote(e) {
@@ -18,5 +21,19 @@ export default class NotesController extends Controller {
       date: currentDay,
     };
     this.application.createNote(madeNote);
+    this.title =undefined;
+    this.note =undefined;
+
+  }
+
+  @action
+  async edit(id) {
+    this.updatedNote = await this.store.peekRecord('note', id);
+  }
+
+
+  @action
+  async delete(index) {
+    this.application.deleteNote(index);
   }
 }

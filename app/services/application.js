@@ -15,9 +15,10 @@ export default class ApplicationService extends Service {
     let response = await this.store.createRecord('note', note);
     response.save();
   }
-  async editNote({ id, note }) {
+  async editNote({ id, note,title }) {
     let response = await this.store.findRecord('note', id);
     response.note = note;
+    response.title = title;
     response.save();
   }
 

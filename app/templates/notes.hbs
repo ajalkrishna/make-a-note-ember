@@ -1,4 +1,4 @@
-<div class="index">
+<div class="notes">
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6 col-lg-6 form_section">
@@ -19,13 +19,26 @@
             </div>
             <div class="col-12 col-md-6 col-lg-6 note_section">
                 <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 g-3">
-                    {{#each @model as |note index|}}
+                    {{#each @model as |note|}}
                     <div class="col">
-                        <NoteCard @note={{note}} @index={{index}} />
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">{{note.title}}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">{{note.date}}</h6>
+                                <p class="card-text">{{note.note}}</p>
+                                {{!-- template-lint-disable no-invalid-interactive --}}
+                                <div class="d-flex justify-content-between">
+                                    <p class="border p-2" {{on 'click' (fn this.delete note.id) }}>delete</p>
+                                    <p class="border p-2" {{on 'click' (fn this.edit note.id)}} data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">edit</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     {{/each}}
                 </div>
             </div>
         </div>
+        <NoteCard @update={{this.updatedNote}} />
     </div>
 </div>
