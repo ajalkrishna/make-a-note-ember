@@ -10,12 +10,22 @@
                 <li class="nav-item">
                     <LinkTo class="nav-link" @route="index">Home</LinkTo>
                 </li>
+                {{#if this.session.isAuthenticated}}
                 <li class="nav-item">
                     <LinkTo class="nav-link" @route="notes">Notes</LinkTo>
                 </li>
+                {{/if}}
+                {{#if this.session.isAuthenticated}}
+                <li class="nav-item">
+                    {{!-- template-lint-disable link-href-attributes --}}
+                    {{!-- template-lint-disable no-invalid-interactive --}}
+                    <a class="nav-link" {{on 'click' this.logout}}>Logout</a>
+                </li>
+                {{else}}
                 <li class="nav-item">
                     <LinkTo class="nav-link" @route="login">Login</LinkTo>
                 </li>
+                {{/if}}
             </ul>
         </div>
     </div>

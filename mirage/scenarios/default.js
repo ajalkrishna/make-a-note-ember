@@ -13,4 +13,8 @@ export default function (server) {
     note: 'It is a dummy note',
     date: 'mm/dd/yyyy',
   });
+  server.create('user-login', {
+    email: '123',
+    password: '123',
+  });
 }

@@ -1,17 +1,17 @@
 <div class="login">
     <div class="container">
         <div class="row align-items-center justify-content-center">
-            <div class="col-8 col-md-6 col-lg-4 login_template">
+            <div class="col-10 col-md-6 col-lg-4 login_template">
                 <p class="text-center display-6">Authenticator</p>
                 <hr>
                 <form class="form w-100" {{on 'submit' this.login}}>
                     <div class="mb-3 mt-4">
                         <label for="email">Email-id</label>
-                        <Input @type="text" @value={{this.email}} id="email" class="border rounded-pill form-control w-100" />
+                        <Input @type="text" @value={{this.email}} autocomplete="off" id="email" class="border rounded-pill form-control w-100" />
                     </div>
                     <div class="mb-3">
                         <label for="password">Password</label>
-                        <Input @type="text" @value={{this.email}} id="password" class="border rounded-pill form-control w-100" />
+                        <Input @type="password" @value={{this.password}}  id="password" class="border rounded-pill form-control w-100" />
                     </div>
                     <div class="mb-3">
                         <button type="submit" class="btn btn-primary">Submit</button>

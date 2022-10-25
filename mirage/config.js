@@ -28,4 +28,7 @@ export default function () {
   this.put('/notes/:id');
   this.patch('/notes/:id');
   this.del('/notes/:id');
+
+  this.get('/user-logins');
+  this.post('/user-logins', () => {});
 }
