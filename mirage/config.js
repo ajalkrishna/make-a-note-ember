@@ -30,5 +30,6 @@ export default function () {
   this.del('/notes/:id');
 
   this.get('/user-logins');
+  this.get('/user-logins/:id');
   this.post('/user-logins', () => {});
 }
