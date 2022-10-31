@@ -1,3 +1,4 @@
+import { Response } from 'miragejs';
 export default function () {
   // These comments are here to help you get started. Feel free to delete them.
   /*
@@ -31,5 +32,13 @@ export default function () {
 
   this.get('/user-logins');
   this.get('/user-logins/:id');
-  this.post('/user-logins', () => {});
+
+  this.post('/user-logins', (schema, request) => {
+    let { email, password } = JSON.parse(request.requestBody).data.attributes;
+    let user = schema.userLogins.findBy({ email: email, password: password });
+    if (user != null) {
+      return new Response(200, { some: 'header' }, { data: user });
+
+    }
+  });
 }

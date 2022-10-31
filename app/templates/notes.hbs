@@ -26,12 +26,13 @@
                                 <h5 class="card-title">{{note.title}}</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">{{note.date}}</h6>
                                 <p class="card-text">{{note.note}}</p>
+
+                            </div>
+                            <div class="d-flex card-footer">
                                 {{!-- template-lint-disable no-invalid-interactive --}}
-                                <div class="d-flex justify-content-between">
-                                    <p class="border p-2" {{on 'click' (fn this.delete note.id) }}>delete</p>
-                                    <p class="border p-2" {{on 'click' (fn this.edit note.id)}} data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">edit</p>
-                                </div>
+                                <i class="bi bi-trash fs-4" {{on 'click' (fn this.delete note.id) }}></i>
+                                <i class="bi bi-pencil-square fs-4 ms-2" {{on 'click' (fn this.edit note.id)}}
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
                             </div>
                         </div>
                     </div>

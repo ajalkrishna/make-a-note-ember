@@ -17,17 +17,16 @@ export default class LoginController extends Controller {
     try {
       this.result = await this.session.authenticate('authenticator:token',user)
 
-      console.log("this is the end of try block" + this.result);
     } catch (err) {
       console.log(err);
     }
 
     if (this.session.isAuthenticated) {
-      console.log(this.result);
-      console.log('Login successfull');
+      //console.log(this.result+" this is the result");
+      //console.log('Login successfull');
       this.router.transitionTo('index');
     } else {
-      alert('invalid credentials!@');
+      alert('invalid credentials!');
     }
   }
 }
