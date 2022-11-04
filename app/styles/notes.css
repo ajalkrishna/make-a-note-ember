@@ -21,11 +21,32 @@
 
 .notes .card{
     border-radius: 0;
+    height: 250px;
     /* width: 100%; */
 }
+
+.notes .card:hover{
+    border-radius: 2px;
+    transform: scale(1.05);
+    transition: all 0.5s ease;
+}
+.notes .card .bi{
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.2s all ease;
+}
+.notes .card:hover .bi{
+    opacity: 1;
+    transform: translateY(0px);
+    color: white;
+}
 .notes .card-footer{
-    background-color: transparent;
-    border: none;
+    visibility: hidden;
+}
+.notes .card:hover .card-footer{
+    visibility: visible;
+    background-color: rgb(172, 101, 0);
+    border-radius: 0;
 }
 .notes .card-footer .bi:hover{
     transform: scale(1.1);

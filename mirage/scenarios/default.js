@@ -10,7 +10,7 @@ export default function (server) {
   });
   server.create('note', {
     title: 'Dummy Note',
-    note: 'It is a dummy note',
+    note: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ',
     date: 'mm/dd/yyyy',
   });
   server.create('user-login', {
