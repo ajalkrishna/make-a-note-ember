@@ -3,13 +3,12 @@ import { inject as service } from '@ember/service';
 
 export default class TokenAuthenticator extends Base {
   @service store;
+  @service application;
 
   restore(data) { }
 
   async authenticate(user) {
-    let login = await this.store.createRecord('user-login',user);
-    login.save();
-
+    this.application.loginUser(user)
   }
 
   async invalidate(data) { }

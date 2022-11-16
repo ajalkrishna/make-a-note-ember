@@ -27,4 +27,9 @@ export default class ApplicationService extends Service {
     response.deleteRecord();
     response.save();
   }
+
+  async loginUser(user){
+    let login = await this.store.createRecord('user-login',user);
+    login.save();
+  }
 }

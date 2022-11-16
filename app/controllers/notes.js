@@ -25,8 +25,9 @@ export default class NotesController extends Controller {
   }
 
   @action
-  async edit(id) {
-    this.updatedNote = await this.store.peekRecord('note', id);
+  async edit(ind) {
+    let {title,note,id} = await this.store.peekRecord('note', ind);
+    this.updatedNote={title,note,id}
   }
 
   @action
